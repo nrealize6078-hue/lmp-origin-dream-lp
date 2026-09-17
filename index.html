@@ -166,6 +166,27 @@ footer{padding:25px 5% calc(25px + var(--bar-h));display:flex;justify-content:sp
   .pain h3{font-size:18px}
   .strip{gap:12px;flex-wrap:wrap;padding:18px;font-size:12px}
   .closing{text-align:left}
+
+  /* 日本語の改行対策：<br>で区切った行が再折り返ししないよう縮める。
+     320px幅で実測した必要サイズ。min()で元の指定より大きくはならない */
+  .hero h1{font-size:min(clamp(40px,9vw,59px),10.9vw)}
+  .pivot h2{font-size:min(clamp(40px,5vw,64px),11.5vw)}
+  .intro h2{font-size:min(clamp(29px,3.5vw,45px),7.3vw)}
+  .pains h2{font-size:min(clamp(29px,3.5vw,45px),5.7vw)}
+  .solutions h2{font-size:min(clamp(29px,3.5vw,45px),6.2vw)}
+  .belief h2{font-size:min(clamp(36px,4vw,53px),7.3vw)}
+  .closing h2{font-size:min(clamp(31px,4vw,50px),10.6vw)}
+  .solution h3{font-size:min(23px,4.5vw)}
+  .closing{padding:60px 18px}
+  .hero p{font-size:min(16px,4vw)}
+  .letter-grid p:not(.letter-em){font-size:max(12px,min(16px,3.5vw))}
+  .letter-grid p.letter-em{font-size:min(20px,4vw)}
+  .pivot p{font-size:min(16px,4vw)}
+  .belief p{font-size:min(16px,3.9vw)}
+  .closing .wrap>p{font-size:max(12px,min(16px,3.7vw))}
+  /* 収まりきらない段落は、語中ではなく句読点で折り返す（iOS Safariでも効く）。
+     body全体に掛けると狭い2カラムが折り返せず横に溢れるので、対象段落だけに限定する */
+  .hero p,.letter-grid p,.pivot p,.belief p,.closing .wrap>p{word-break:keep-all;overflow-wrap:break-word}
   .bar-long{display:none}
   .bar-short{display:inline}
   .cta-bar{gap:12px;padding:10px 4%}
@@ -176,9 +197,16 @@ footer{padding:25px 5% calc(25px + var(--bar-h));display:flex;justify-content:sp
   .line-card .lc-t{font-size:13px}
 }
 
+@media(min-width:481px) and (max-width:800px){
+  /* この範囲だけ課題カードが2カラムになり、見出しが1行に収まらない */
+  .pain h3{font-size:min(18px,2.85vw)}
+}
+@media(max-width:480px){
+  /* 2カラムのままだと課題カードの見出しが11px台まで縮むので、1カラムにして18pxを保つ */
+  .pain-grid{grid-template-columns:1fr}
+}
 @media(max-width:380px){
   :root{--bar-h:68px}
-  .pain-grid{grid-template-columns:1fr}
 }
 </style></head><body>
 <header><a href="#" class="logo">LMP<small>LIFE MAKE<br>PARTNERS</small></a><nav><a href="#issues">賃貸経営の課題</a><a href="#system">LMPの仕組み</a><a href="#future" class="nav-main">次の成長モデルを見る ↗</a></nav></header>
