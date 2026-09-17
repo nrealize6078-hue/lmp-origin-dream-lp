@@ -1,5 +1,6 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="賃貸仲介・管理会社の次の成長へ。地域企業との接点から相談を育て、営業育成と顧客管理までつなぐライフメイクパートナーズ。"><title>LMP｜あの日の夢に、今の武器を。</title><style>
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 a{color:inherit;text-decoration:none}
 .logo small{font-size:12px;letter-spacing:1px;display:inline-block;margin-left:14px;line-height:1.4}
@@ -55,7 +56,7 @@ details p{color:#596579;padding:0 20px}
 a:focus-visible,summary:focus-visible{outline:3px solid #ffab00;outline-offset:5px}
 
 /* ---- 基本設定・配色 ---- */
-:root{--ink:#26332e;--blue:#21604e;--lime:#e5c18b;--paper:#f1eee6;--line:#d3cec2}
+:root{--ink:#26332e;--line-brand:#06c755;--bar-h:76px;--blue:#21604e;--lime:#e5c18b;--paper:#f1eee6;--line:#d3cec2}
 body{margin:0;color:var(--ink);font-family:Arial,'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;font-size:16px;line-height:1.85;background:#f7f4ed}
 
 /* ---- ヘッダー ---- */
@@ -112,10 +113,27 @@ h1{font-size:clamp(43px,5.4vw,72px);line-height:1.5;letter-spacing:.01em;margin:
 .closing .eyebrow,.solutions .eyebrow{color:#e5c18b}
 
 /* ---- フッター ---- */
-footer{padding:25px 5%;display:flex;justify-content:space-between;font-size:13px;color:#647085;background:#f7f4ed}
+footer{padding:25px 5% calc(25px + var(--bar-h));display:flex;justify-content:space-between;font-size:13px;color:#647085;background:#f7f4ed}
 .muted,.note,details p,.pain p{color:#60685f}
 
+/* ---- LINE CTA（最終問い合わせ導線） ---- */
+.line-add{display:flex;align-items:center;justify-content:center;gap:12px}
+.line-add img{display:block;height:36px;width:auto}
+.btn-line{display:inline-flex;align-items:center;gap:9px;background:var(--line-brand);color:#fff;font-size:14px;font-weight:700;padding:11px 20px;border-radius:6px}
+.btn-line .ico{width:18px;height:18px}
+.line-card{max-width:720px;margin:38px auto 0;padding:32px 40px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--line-brand);text-align:center;color:var(--ink)}
+.line-card .lc-h{font-size:20px;font-weight:700;margin:0;line-height:1.6;color:var(--ink)}
+.line-card .lc-t{font-size:14px;color:#647085;margin:10px 0 22px;line-height:1.8}
+.backlink{display:inline-block;margin-top:28px;font-size:13px;color:#d4e3d8;border-bottom:1px solid #4c7a68;padding-bottom:3px}
+
+/* ---- 固定ボトムバー ---- */
+.cta-bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:center;gap:22px;min-height:var(--bar-h);padding:12px 5%;background:rgba(20,44,35,.96);border-top:1px solid #ffffff2e;box-shadow:0 -6px 24px rgba(12,28,22,.25);transform:translateY(105%);visibility:hidden;transition:transform .28s ease,visibility .28s}
+.cta-bar.is-visible{transform:none;visibility:visible}
+.cta-bar p{margin:0;color:#e4ece7;font-size:14px;letter-spacing:.04em;line-height:1.6}
+.bar-short{display:none}
+
 @media(prefers-reduced-motion:reduce){
+  .cta-bar{transition:none}
   html{scroll-behavior:auto}
 }
 
@@ -148,9 +166,18 @@ footer{padding:25px 5%;display:flex;justify-content:space-between;font-size:13px
   .pain h3{font-size:18px}
   .strip{gap:12px;flex-wrap:wrap;padding:18px;font-size:12px}
   .closing{text-align:left}
+  .bar-long{display:none}
+  .bar-short{display:inline}
+  .cta-bar{gap:12px;padding:10px 4%}
+  .cta-bar p{font-size:12px}
+  .line-add img{height:32px}
+  .line-card{padding:26px 20px;margin-top:28px;text-align:center}
+  .line-card .lc-h{font-size:17px}
+  .line-card .lc-t{font-size:13px}
 }
 
 @media(max-width:380px){
+  :root{--bar-h:68px}
   .pain-grid{grid-template-columns:1fr}
 }
 </style></head><body>
@@ -165,4 +192,12 @@ footer{padding:25px 5%;display:flex;justify-content:space-between;font-size:13px
 <section class="section" id="future"><div class="wrap"><div class="eyebrow">04 / A FUTURE YOU CAN BUILD</div><h2>来月の売上も。<br>10年後の会社も。</h2><p class="muted">今ある賃貸事業を土台に、企業との関係と、暮らしの相談から事業を広げます。</p><div class="revenue"><article><div class="word">導入</div><h3>企業との接点が、収益へ。</h3><p>REALIZECLUBの企業導入に伴う収益。地域企業の人生支援を始める一歩が、新たな事業機会に。</p></article><article><div class="word">継続</div><h3>関係の継続が、土台へ。</h3><p>REALIZECLUBの契約継続に伴う収益。企業との関係を育てながら、継続収益の基盤をつくる。</p></article><article><div class="word">相談</div><h3>暮らしの変化が、機会へ。</h3><p>賃貸・売買・注文住宅・保険など。必要な支援につなぐことで、相談からの収益機会が広がる。</p></article></div><p class="note">収益は契約条件・活動状況・契約継続・成約等により異なります。各業務は必要な免許・資格および提携体制に応じて対応します。</p><div class="compare"><div class="row"><span>来店した人との接点</span><span>→</span><strong>地域企業と社員・家族との接点へ</strong></div><div class="row"><span>部屋探しのタイミングで出会う</span><span>→</span><strong>住まいを考える前から支える</strong></div><div class="row"><span>担当者の経験に頼る</span><span>→</span><strong>教育と管理の仕組みで育てる</strong></div><div class="row"><span>今月の契約を追う</span><span>→</span><strong>今月の成果と、未来の顧客基盤を育てる</strong></div></div></div></section>
 <section class="section belief"><div class="wrap"><div class="eyebrow">05 / THE DREAM LIVES ON</div><h2>あの頃の自分に、<br>いつか、こう言いたい。</h2><p>「あの小さな店から、ここまで来たぞ。」<br>社員が育ち、家族が笑い、街の人が相談に来てくれる。<br>部屋を紹介するだけでなく、その先の暮らしまで支える会社になった。</p><p>初めて鍵を渡したお客様の子どもが、大人になって訪ねてくる。<br>「親から、ここに相談すればいいと聞きました。」<br>そんな未来を、この街につくっていく。</p><p><b>あなたが会社を始めた、その一歩が、<br>社員へ、家族へ、地域へ。そして次の世代へ続いていく。</b></p></div></section>
 <section class="section"><div class="wrap faq"><div class="eyebrow">QUESTIONS</div><h2>「うちでもできる？」に答えます。</h2><details><summary>法人営業の経験がなくても取り組めますか？</summary><p>経営者との接点をつくり、PRESIDENT JOURNEYを通じて想いや課題を理解し、REALIZECLUBの提案につなぐ流れを用意する設計です。接点づくりや対話の活動は必要です。既存の企業とのつながりや体制に合わせて進め方を検討します。</p></details><details><summary>売買が得意なスタッフがいなくても大丈夫ですか？</summary><p>営業教育・動画学習・AIロープレなどを組み合わせて育成を支えます。習得には学習と実践が必要です。取扱業務や必要な免許・提携体制を確認し、自社に合う事業の広げ方を考えます。</p></details><details><summary>加盟したら自動的に相談や契約が増えますか？</summary><p>成果を保証するものではありません。企業への働きかけ、導入後の利用促進、相談対応、スタッフの育成を続けることが大切です。LMPは、それらの活動をつなげて運営するための仕組みです。</p></details><details><summary>導入前に何を確認すればいいですか？</summary><p>営業エリア、既存の事業と顧客基盤、担当体制、育成計画、導入費用・継続費用を確認します。各システムの提供範囲・提供時期も含め、自社で運営できる形かを具体的に検討します。</p></details></div></section>
-<section class="closing"><div class="wrap"><div class="eyebrow">LIFE MAKE PARTNERS</div><h2>夢の続きを、<br>今のあなたで。</h2><p>経験もある。守りたい人もいる。<br>あの頃にはなかった力が、今のあなたにはある。<br>その力に、LMPという仕組みを。</p><a class="btn lime" href="#system">あの日の夢を、次の事業へ</a></div></section></main><footer><span><b>LMP</b>　LIFE MAKE PARTNERS</span><span>REALIZE OS ｜ 人生支援の仕組みを、地域へ。</span></footer></body></html>
+<section class="closing"><div class="wrap"><div class="eyebrow">LIFE MAKE PARTNERS</div><h2>夢の続きを、<br>今のあなたで。</h2><p>経験もある。守りたい人もいる。<br>あの頃にはなかった力が、今のあなたにはある。<br>その力に、LMPという仕組みを。</p><div class="line-card"><p class="lc-h">ご相談・お問い合わせは、LINEで承ります。</p><p class="lc-t">LINE公式アカウントを友だち追加いただくと、御社の商圏・体制に合わせた進め方をご案内します。</p><div class="line-add"><a href="https://lin.ee/vV1leDB"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a><a class="btn-line" href="https://lin.ee/vV1leDB" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加して相談する</a></div></div><a class="backlink" href="#system">LMPの仕組みをもう一度見る ↑</a></div></section></main><footer><span><b>LMP</b>　LIFE MAKE PARTNERS</span><span>REALIZE OS ｜ 人生支援の仕組みを、地域へ。</span></footer><div class="cta-bar" id="cta-bar"><p><span class="bar-long">あの日の夢の続きについて、LINEでご相談いただけます。</span><span class="bar-short">LINEでご相談いただけます。</span></p><div class="line-add"><a href="https://lin.ee/vV1leDB"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a><a class="btn-line" href="https://lin.ee/vV1leDB" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加</a></div></div><script>
+/* LINE公式ボタン：画像が読めない環境ではブランドカラーのボタンに差し替える */
+var LINE_PATH="M12 3C6.48 3 2 6.63 2 11.1c0 4 3.55 7.36 8.35 8 .32.07.77.21.88.5.1.26.07.66.03.92l-.14.85c-.04.26-.2 1 .88.55 1.08-.46 5.82-3.43 7.94-5.87C21.4 14.44 22 12.84 22 11.1 22 6.63 17.52 3 12 3z";
+document.querySelectorAll('[data-line-ico]').forEach(function(svg){svg.setAttribute('viewBox','0 0 24 24');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('fill','currentColor');p.setAttribute('d',LINE_PATH);svg.appendChild(p);});
+document.querySelectorAll('.line-add').forEach(function(box){var img=box.querySelector('img'),official=img.parentElement,fallback=box.querySelector('.btn-line');var swap=function(){official.hidden=true;fallback.hidden=false;};if(img.complete&&img.naturalWidth===0)swap();else img.addEventListener('error',swap);});
+/* 固定ボトムバー：ヒーローを過ぎたら出す */
+var bar=document.getElementById('cta-bar'),hero=document.querySelector('.hero');
+if(bar&&hero){var show=function(){bar.classList.toggle('is-visible',hero.getBoundingClientRect().bottom<=0)};addEventListener('scroll',show,{passive:true});addEventListener('resize',show);show()}
+</script></body></html>
