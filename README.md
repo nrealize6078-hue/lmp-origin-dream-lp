@@ -97,3 +97,11 @@ git add -A
 git commit -m "変更内容"
 git push
 ```
+
+## LINEボタンの配色（2026年9月17日）
+
+LINE公式の緑の画像ボタンは使わず、**このLPのゴールド `--lime:#e5c18b`** に統一（`.btn-line`）。
+ファーストビューの1つだけ白ベース（背景#fff・文字#1d4a3b・アイコンのみLINEグリーン）で、隣のゴールドのCTAと役割を分けている。
+LINEのアイコンはJSがSVGパスで描画。設置は3か所（ファーストビュー `.hero-cta` / 最終CTAカード / 固定ボトムバー）。
+野球のLP（lmp-baseball-home-lp）と同じ考え方で揃えてある。
+
