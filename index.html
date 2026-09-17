@@ -183,10 +183,10 @@ footer{padding:25px 5% calc(25px + var(--bar-h));display:flex;justify-content:sp
   .letter-grid p.letter-em{font-size:min(20px,4vw)}
   .pivot p{font-size:min(16px,4vw)}
   .belief p{font-size:min(16px,3.9vw)}
-  .closing .wrap>p{font-size:max(12px,min(16px,3.7vw))}
-  /* 収まりきらない段落は、語中ではなく句読点で折り返す（iOS Safariでも効く）。
-     body全体に掛けると狭い2カラムが折り返せず横に溢れるので、対象段落だけに限定する */
-  .hero p,.letter-grid p,.pivot p,.belief p,.closing .wrap>p{word-break:keep-all;overflow-wrap:break-word}
+  .closing .wrap>p{font-size:max(12px,min(16px,3.3vw))}
+  /* 禁則処理を厳しめにする。keep-all は iOS Safari で禁則が外れ、
+     行頭に 、。」 が来てしまうので使わない */
+  .hero p,.letter-grid p,.pivot p,.belief p,.closing .wrap>p,.flow p,.pain p,.solution p{line-break:strict;-webkit-line-break:strict;text-wrap:pretty}
   .bar-long{display:none}
   .bar-short{display:inline}
   .cta-bar{gap:12px;padding:10px 4%}
@@ -202,8 +202,9 @@ footer{padding:25px 5% calc(25px + var(--bar-h));display:flex;justify-content:sp
   .pain h3{font-size:min(18px,2.85vw)}
 }
 @media(max-width:480px){
-  /* 2カラムのままだと課題カードの見出しが11px台まで縮むので、1カラムにして18pxを保つ */
+  /* 2カラムのままだとカード見出しが「企業とつな／がる」のように割れるので1カラムにする */
   .pain-grid{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
 }
 @media(max-width:380px){
   :root{--bar-h:68px}
@@ -220,7 +221,7 @@ footer{padding:25px 5% calc(25px + var(--bar-h));display:flex;justify-content:sp
 <section class="section" id="future"><div class="wrap"><div class="eyebrow">04 / A FUTURE YOU CAN BUILD</div><h2>来月の売上も。<br>10年後の会社も。</h2><p class="muted">今ある賃貸事業を土台に、企業との関係と、暮らしの相談から事業を広げます。</p><div class="revenue"><article><div class="word">導入</div><h3>企業との接点が、収益へ。</h3><p>REALIZECLUBの企業導入に伴う収益。地域企業の人生支援を始める一歩が、新たな事業機会に。</p></article><article><div class="word">継続</div><h3>関係の継続が、土台へ。</h3><p>REALIZECLUBの契約継続に伴う収益。企業との関係を育てながら、継続収益の基盤をつくる。</p></article><article><div class="word">相談</div><h3>暮らしの変化が、機会へ。</h3><p>賃貸・売買・注文住宅・保険など。必要な支援につなぐことで、相談からの収益機会が広がる。</p></article></div><p class="note">収益は契約条件・活動状況・契約継続・成約等により異なります。各業務は必要な免許・資格および提携体制に応じて対応します。</p><div class="compare"><div class="row"><span>来店した人との接点</span><span>→</span><strong>地域企業と社員・家族との接点へ</strong></div><div class="row"><span>部屋探しのタイミングで出会う</span><span>→</span><strong>住まいを考える前から支える</strong></div><div class="row"><span>担当者の経験に頼る</span><span>→</span><strong>教育と管理の仕組みで育てる</strong></div><div class="row"><span>今月の契約を追う</span><span>→</span><strong>今月の成果と、未来の顧客基盤を育てる</strong></div></div></div></section>
 <section class="section belief"><div class="wrap"><div class="eyebrow">05 / THE DREAM LIVES ON</div><h2>あの頃の自分に、<br>いつか、こう言いたい。</h2><p>「あの小さな店から、ここまで来たぞ。」<br>社員が育ち、家族が笑い、街の人が相談に来てくれる。<br>部屋を紹介するだけでなく、その先の暮らしまで支える会社になった。</p><p>初めて鍵を渡したお客様の子どもが、大人になって訪ねてくる。<br>「親から、ここに相談すればいいと聞きました。」<br>そんな未来を、この街につくっていく。</p><p><b>あなたが会社を始めた、その一歩が、<br>社員へ、家族へ、地域へ。そして次の世代へ続いていく。</b></p></div></section>
 <section class="section"><div class="wrap faq"><div class="eyebrow">QUESTIONS</div><h2>「うちでもできる？」に答えます。</h2><details><summary>法人営業の経験がなくても取り組めますか？</summary><p>経営者との接点をつくり、PRESIDENT JOURNEYを通じて想いや課題を理解し、REALIZECLUBの提案につなぐ流れを用意する設計です。接点づくりや対話の活動は必要です。既存の企業とのつながりや体制に合わせて進め方を検討します。</p></details><details><summary>売買が得意なスタッフがいなくても大丈夫ですか？</summary><p>営業教育・動画学習・AIロープレなどを組み合わせて育成を支えます。習得には学習と実践が必要です。取扱業務や必要な免許・提携体制を確認し、自社に合う事業の広げ方を考えます。</p></details><details><summary>加盟したら自動的に相談や契約が増えますか？</summary><p>成果を保証するものではありません。企業への働きかけ、導入後の利用促進、相談対応、スタッフの育成を続けることが大切です。LMPは、それらの活動をつなげて運営するための仕組みです。</p></details><details><summary>導入前に何を確認すればいいですか？</summary><p>営業エリア、既存の事業と顧客基盤、担当体制、育成計画、導入費用・継続費用を確認します。各システムの提供範囲・提供時期も含め、自社で運営できる形かを具体的に検討します。</p></details></div></section>
-<section class="closing"><div class="wrap"><div class="eyebrow">LIFE MAKE PARTNERS</div><h2>夢の続きを、<br>今のあなたで。</h2><p>経験もある。守りたい人もいる。<br>あの頃にはなかった力が、今のあなたにはある。<br>その力に、LMPという仕組みを。</p><div class="line-card"><p class="lc-h">ご相談・お問い合わせは、LINEで承ります。</p><p class="lc-t">LINE公式アカウントを友だち追加いただくと、御社の商圏・体制に合わせた進め方をご案内します。</p><div class="line-add"><a href="https://lin.ee/vV1leDB"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a><a class="btn-line" href="https://lin.ee/vV1leDB" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加して相談する</a></div></div><a class="backlink" href="#system">LMPの仕組みをもう一度見る ↑</a></div></section></main><footer><span><b>LMP</b>　LIFE MAKE PARTNERS</span><span>REALIZE OS ｜ 人生支援の仕組みを、地域へ。</span></footer><div class="cta-bar" id="cta-bar"><p><span class="bar-long">あの日の夢の続きについて、LINEでご相談いただけます。</span><span class="bar-short">LINEでご相談いただけます。</span></p><div class="line-add"><a href="https://lin.ee/vV1leDB"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a><a class="btn-line" href="https://lin.ee/vV1leDB" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加</a></div></div><script>
+<section class="closing"><div class="wrap"><div class="eyebrow">LIFE MAKE PARTNERS</div><h2>夢の続きを、<br>今のあなたで。</h2><p>経験もある。守りたい人もいる。<br>あの頃にはなかった力が、今のあなたにはある。<br>その力に、LMPという仕組みを。</p><div class="line-card"><p class="lc-h">ご相談・お問い合わせは、<br>LINEで承ります。</p><p class="lc-t">LINE公式アカウントを友だち追加いただくと、御社の商圏・体制に合わせた進め方をご案内します。</p><div class="line-add"><a href="https://lin.ee/vV1leDB"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a><a class="btn-line" href="https://lin.ee/vV1leDB" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加して相談する</a></div></div><a class="backlink" href="#system">LMPの仕組みをもう一度見る ↑</a></div></section></main><footer><span><b>LMP</b>　LIFE MAKE PARTNERS</span><span>REALIZE OS ｜ 人生支援の仕組みを、地域へ。</span></footer><div class="cta-bar" id="cta-bar"><p><span class="bar-long">あの日の夢の続きについて、LINEでご相談いただけます。</span><span class="bar-short">LINEでご相談いただけます。</span></p><div class="line-add"><a href="https://lin.ee/vV1leDB"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a><a class="btn-line" href="https://lin.ee/vV1leDB" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加</a></div></div><script>
 /* LINE公式ボタン：画像が読めない環境ではブランドカラーのボタンに差し替える */
 var LINE_PATH="M12 3C6.48 3 2 6.63 2 11.1c0 4 3.55 7.36 8.35 8 .32.07.77.21.88.5.1.26.07.66.03.92l-.14.85c-.04.26-.2 1 .88.55 1.08-.46 5.82-3.43 7.94-5.87C21.4 14.44 22 12.84 22 11.1 22 6.63 17.52 3 12 3z";
 document.querySelectorAll('[data-line-ico]').forEach(function(svg){svg.setAttribute('viewBox','0 0 24 24');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('fill','currentColor');p.setAttribute('d',LINE_PATH);svg.appendChild(p);});
